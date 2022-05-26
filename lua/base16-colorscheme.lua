@@ -51,6 +51,15 @@ local function darken(hex, pct)
     return string.format("#%s", rgb_to_hex(r, g, b))
 end
 
+local function lighten(hex, pct)
+    pct = 1 - pct
+    local r, g, b = hex_to_rgb(string.sub(hex, 2))
+    r = math.floor(r * (1 + pct))
+    g = math.floor(g * (1 + pct))
+    b = math.floor(b * (1 + pct))
+    return string.format("#%s", rgb_to_hex(r, g, b))
+end
+
 -- This is a bit of syntactic sugar for creating highlight groups.
 --
 -- local colorscheme = require('colorscheme')
@@ -329,10 +338,10 @@ function M.setup(colors, config)
 
     hi.NvimInternalError = { guifg = M.colors.base00, guibg = M.colors.base08, gui = 'none', guisp = nil }
 
-    local darkerbg = darken(M.colors.base00, 0.1)
+    local lighterbg = lighten(M.colors.base00, 0.1)
 
-    hi.NormalFloat  = { guifg = M.colors.base05, guibg = darkerbg,        gui = nil,    guisp = nil }
-    hi.FloatBorder  = { guifg = M.colors.base05, guibg = darkerbg,        gui = nil,    guisp = nil }
+    hi.NormalFloat  = { guifg = M.colors.base05, guibg = lighterbg,         gui = nil,    guisp = nil }
+    hi.FloatBorder  = { guifg = M.colors.base05, guibg = lighterbg,         gui = nil,    guisp = nil }
     hi.NormalNC     = { guifg = M.colors.base05, guibg = M.colors.base00, gui = nil,    guisp = nil }
     hi.TermCursor   = { guifg = M.colors.base00, guibg = M.colors.base05, gui = 'none', guisp = nil }
     hi.TermCursorNC = { guifg = M.colors.base00, guibg = M.colors.base05, gui = nil,    guisp = nil }
@@ -356,8 +365,8 @@ function M.setup(colors, config)
             local darkerstatusline = darken(M.colors.base02, 0.1)
             hi.TelescopeBorder       = { guifg = nil,              guibg = darkerbg,         gui = nil,    guisp = nil }
             hi.TelescopePromptBorder = { guifg = nil,              guibg = darkerbg,         gui = nil,    guisp = nil }
-            hi.TelescopePromptNormal = { guifg = M.colors.base05,  guibg = darkerstatusline, gui = nil,    guisp = nil }
-            hi.TelescopePromptPrefix = { guifg = M.colors.base08,  guibg = darkerstatusline, gui = nil,    guisp = nil }
+            hi.TelescopePromptNormal = { guifg = M.colors.base05,  guibg = darkerbg,         gui = nil,    guisp = nil }
+            hi.TelescopePromptPrefix = { guifg = M.colors.base08,  guibg = darkerbg,         gui = nil,    guisp = nil }
             hi.TelescopeNormal       = { guifg = nil,              guibg = darkerbg,         gui = nil,    guisp = nil }
             hi.TelescopePreviewTitle = { guifg = darkercursorline, guibg = darkerbg,         gui = nil,    guisp = nil }
             hi.TelescopePromptTitle  = { guifg = darkercursorline, guibg = darkerbg,         gui = nil,    guisp = nil }
