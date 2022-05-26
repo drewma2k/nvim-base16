@@ -352,7 +352,7 @@ function M.setup(colors, config)
             local darkerbg = darken(M.colors.base00, 0.1)
             local darkercursorline = darken(M.colors.base01, 0.1)
             local darkerstatusline = darken(M.colors.base02, 0.1)
-            hi.TelescopeBorder       = { guifg = darkerbg,         guibg = darkerbg,         gui = nil,    guisp = nil }
+            hi.TelescopeBorder       = { guifg = nil,         guibg = darkerbg,         gui = nil,    guisp = nil }
             hi.TelescopePromptBorder = { guifg = darkerstatusline, guibg = darkerstatusline, gui = nil,    guisp = nil }
             hi.TelescopePromptNormal = { guifg = M.colors.base05,  guibg = darkerstatusline, gui = nil,    guisp = nil }
             hi.TelescopePromptPrefix = { guifg = M.colors.base08,  guibg = darkerstatusline, gui = nil,    guisp = nil }
