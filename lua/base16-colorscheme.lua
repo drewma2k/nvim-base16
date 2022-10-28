@@ -176,9 +176,9 @@ function M.setup(colors, config)
     hi.QuickFixLine = { guifg = nil, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.PMenu        = { guifg = M.colors.base05, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.PMenuSel     = { guifg = M.colors.base01, guibg = M.colors.base05, gui = nil, guisp = nil }
-    hi.TabLine      = { guifg = M.colors.base03, guibg = M.colors.base01, gui = 'none', guisp = nil }
-    hi.TabLineFill  = { guifg = M.colors.base03, guibg = M.colors.base01, gui = 'none', guisp = nil }
-    hi.TabLineSel   = { guifg = M.colors.base0B, guibg = M.colors.base01, gui = 'none', guisp = nil }
+    hi.TabLine      = { guifg = M.colors.base03, guibg = M.colors.base02, gui = 'none', guisp = nil }
+    hi.TabLineFill  = { guifg = M.colors.base03, guibg = M.colors.base02, gui = 'none', guisp = nil }
+    hi.TabLineSel   = { guifg = M.colors.base0B, guibg = M.colors.base02, gui = 'none', guisp = nil }
 
     -- Standard syntax highlighting
     hi.Boolean      = { guifg = M.colors.base09, guibg = nil, gui = nil, guisp = nil }
